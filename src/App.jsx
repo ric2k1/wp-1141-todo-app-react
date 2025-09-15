@@ -46,13 +46,13 @@ function App() {
     ))
   }
 
-  const handleKeyPress = (e) => {
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       addTodo()
     }
   }
 
-  const handleDescriptionKeyPress = (e) => {
+  const handleDescriptionKeyDown = (e) => {
     if (e.key === 'Enter' && e.ctrlKey) {
       addTodo()
     }
@@ -68,7 +68,7 @@ function App() {
             type="text"
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
-            onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyDown}
             placeholder="new todo"
             className="todo-input"
           />
@@ -77,7 +77,7 @@ function App() {
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          onKeyPress={handleDescriptionKeyPress}
+          onKeyDown={handleDescriptionKeyDown}
           placeholder="description"
           className="description-input"
         />
